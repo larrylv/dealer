@@ -18,6 +18,6 @@ defmodule Dealer do
   defp secret_key do
     System.get_env("DEALER_API_KEY") ||
      Application.get_env(:dealer, :api_key) ||
-     raise "You should set `DEALER_API_KEY` environment variable, or set the application env by `Application.put_env(:dealer, :api_key, \"xxx\")`."
+     raise "You should set `DEALER_API_KEY` environment variable, or set the application env by `Application.put_env(:dealer, :api_key, \"your_api_key\")`."
   end
 end
