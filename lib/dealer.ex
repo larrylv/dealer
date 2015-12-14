@@ -1,0 +1,2 @@
+defmodule Dealer do
+end
