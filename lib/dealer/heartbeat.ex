@@ -1,4 +1,8 @@
 defmodule Dealer.Heartbeat do
+  @moduledoc """
+  Check the api is up
+  """
+
   @endpoint "/ob/api/heartbeat"
 
   @type t :: %__MODULE__ {

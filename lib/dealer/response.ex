@@ -1,4 +1,8 @@
 defmodule Dealer.Response do
+  @moduledoc """
+  Returns api request's response
+  """
+
   @type t :: %__MODULE__{
     status_code: number,
     data: term,
