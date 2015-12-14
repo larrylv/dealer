@@ -5,11 +5,13 @@ defmodule Dealer do
 
   use HTTPoison.Base
 
+  @doc false
   @spec process_url(String.t) :: String.t
   def process_url(path) do
     "https://api.stockfighter.io" <> path
   end
 
+  @doc false
   @spec process_request_headers(list) :: list
   def process_request_headers(headers) do
     headers ++ [{"X-Starfighter-Authorization", secret_key}, {"Content-Type", "application/json"}]

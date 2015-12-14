@@ -9,6 +9,7 @@ defmodule Dealer.Heartbeat do
   defstruct ok: false, error: ""
 
   @spec get() :: Dealer.Response | {:error, term}
+  @doc "Check the api is up"
   def get do
     build_path(@endpoint)
     |> Dealer.get
