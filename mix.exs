@@ -19,7 +19,7 @@ defmodule Dealer.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.8"},
-      {:exjsx, "~> 3.2.0"},
+      {:poison, "~> 1.5"},
       {:inch_ex, ">= 0.0.0", only: :docs},
       {:earmark, "~> 0.1", only: :docs},
       {:ex_doc, "~> 0.11", only: :docs}
