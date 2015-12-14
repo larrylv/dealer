@@ -23,10 +23,13 @@ An api library for [Stockfighter](https://www.stockfighter.io/) in Elixir, provi
 
 ## Usage
 
+### Start application
+
+If you havn't specified starting `dealer` application in your mix.exs, or you are in a normal `iex` session, you should explicitly call `Dealer.start` to start the application.
+
 ### Authentication
 
 You should set `DEALER_API_KEY` environment variable, or set the application env by `Application.put_env(:dealer, :api_key, "your_api_key")`.
-
 
 ### Response
 
