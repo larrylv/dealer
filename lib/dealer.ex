@@ -10,7 +10,7 @@ defmodule Dealer do
     "https://api.stockfighter.io" <> path
   end
 
-  @spec process_request_headers(array) :: array
+  @spec process_request_headers(list) :: list
   def process_request_headers(headers) do
     headers ++ [{"X-Starfighter-Authorization", secret_key}, {"Content-Type", "application/json"}]
   end
