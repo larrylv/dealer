@@ -1,7 +1,9 @@
-defmodule Dealer.Stock.Order do
+defmodule Dealer.Order do
   @moduledoc """
   Struct of an orderbook for a stock.
   """
+
+  @endpoint "/ob/api/venues/:venue/stocks/:stock/orders/:id"
 
   @type t :: %__MODULE__ {
     ok: boolean,
@@ -11,8 +13,8 @@ defmodule Dealer.Stock.Order do
     originalQty: integer,
     qty: integer,
     price: integer,
-    type: String.t,
-    id: String.t,
+    orderType: String.t,
+    id: integer,
     account: String.t,
     ts: String.t,
     fills: Dealer.Order.fills
@@ -27,10 +29,20 @@ defmodule Dealer.Stock.Order do
             originalQty: 0,
             qty: 0,
             price: 0,
-            type: "",
-            id: "",
+            orderType: "",
+            id: 0,
             account: "",
             ts: "",
             fills: []
+
+  import Dealer, only: [build_path: 2]
+
+  @spec status(String.t, String.t, integer) :: Dealer.Response | {:error, term}
+  @doc "Status for an existing order."
+  def status(venue, stock, id) do
+    build_path(@endpoint, %{venue: venue, stock: stock, id: id})
+    |> Dealer.get
+    |> Dealer.Response.new(%{as: __MODULE__})
+  end
 end
 

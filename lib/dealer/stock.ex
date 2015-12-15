@@ -12,7 +12,7 @@ defmodule Dealer.Stock do
   def orderbook(venue, stock) do
     build_path(@endpoint, %{venue: venue, stock: stock})
     |> Dealer.get
-    |> Dealer.Response.new(%{as: Dealer.Stock.Orderbook})
+    |> Dealer.Response.new(%{as: Dealer.Orderbook})
   end
 
   @spec quote(String.t, String.t) :: Dealer.Response | {:error, term}
@@ -20,6 +20,6 @@ defmodule Dealer.Stock do
   def quote(venue, stock) do
     build_path(@endpoint, %{venue: venue, stock: stock})
     |> Dealer.get
-    |> Dealer.Response.new(%{as: Dealer.Stock.Quote})
+    |> Dealer.Response.new(%{as: Dealer.Quote})
   end
 end

@@ -1,4 +1,4 @@
-defmodule Dealer.Stock.Orderbook do
+defmodule Dealer.Orderbook do
   @moduledoc """
   Struct of an orderbook for a stock.
   """

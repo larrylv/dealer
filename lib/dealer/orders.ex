@@ -14,6 +14,6 @@ defmodule Dealer.Orders do
 
     build_path(@endpoint, %{venue: venue, stock: stock})
     |> Dealer.post(post_body)
-    |> Dealer.Response.new(%{as: Dealer.Stock.Order})
+    |> Dealer.Response.new(%{as: Dealer.Order})
   end
 end

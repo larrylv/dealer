@@ -1,4 +1,4 @@
-defmodule Dealer.Stock.Quote do
+defmodule Dealer.Quote do
   @moduledoc """
   Struct of quote for a stock.
   """

@@ -98,3 +98,11 @@ Documentation link: https://starfighter.readme.io/docs/a-quote-for-a-stock
 ``` elixir
 iex> Dealer.Stock.quote("LBPTEX", "GVOE")
 ```
+
+### Status For An Existing Order
+
+Documentaion link: https://starfighter.readme.io/docs/status-for-an-existing-order
+
+``` elixir
+iex> Dealer.Order.status("LBPTEX", "GVOE", 306)
+```
