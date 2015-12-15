@@ -106,3 +106,11 @@ Documentaion link: https://starfighter.readme.io/docs/status-for-an-existing-ord
 ``` elixir
 iex> Dealer.Order.status("LBPTEX", "GVOE", 306)
 ```
+
+### Cancel An Order
+
+Documentation link: https://starfighter.readme.io/docs/cancel-an-order
+
+``` elixir
+iex> Dealer.Order.cancel("LBPTEX", "GVOE", 306)
+```

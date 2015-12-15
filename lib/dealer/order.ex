@@ -17,7 +17,9 @@ defmodule Dealer.Order do
     id: integer,
     account: String.t,
     ts: String.t,
-    fills: Dealer.Order.fills
+    fills: Dealer.Order.fills,
+    totalFilled: integer,
+    open: boolean
   }
 
   @type fills :: [%{ price: integer, qty: integer, ts: String.t }]
@@ -33,7 +35,9 @@ defmodule Dealer.Order do
             id: 0,
             account: "",
             ts: "",
-            fills: []
+            fills: [],
+            totalFilled: 0,
+            open: false
 
   import Dealer, only: [build_path: 2]
 
@@ -44,5 +48,14 @@ defmodule Dealer.Order do
     |> Dealer.get
     |> Dealer.Response.new(%{as: __MODULE__})
   end
+
+  @spec cancel(String.t, String.t, integer) :: Dealer.Response | {:error, term}
+  @doc "Cancel An Order."
+  def cancel(venue, stock, id) do
+    build_path(@endpoint, %{venue: venue, stock: stock, id: id})
+    |> Dealer.get
+    |> Dealer.Response.new(%{as: __MODULE__})
+  end
+
 end
 
