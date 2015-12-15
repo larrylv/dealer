@@ -45,7 +45,7 @@ defmodule Dealer.Response do
   end
 
   @spec new(map, map) :: {:error, term}
-  def new({:error, %HTTPoison.Error{reason: reason}}, options) do
+  def new({:error, %HTTPoison.Error{reason: reason}}, _options) do
     {:error, reason}
   end
 
