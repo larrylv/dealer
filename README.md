@@ -74,3 +74,20 @@ iex> Dealer.Venue.heartbeat("RQOVEX")
    {"Strict-Transport-Security", "max-age=31536000; includeSubdomains"}],
   status_code: 200}, status_code: 200}
 ```
+
+### Stocks on a Venue
+
+Documentation link: https://starfighter.readme.io/docs/list-stocks-on-venue
+
+``` elixir
+iex> Dealer.Stocks.on_venue("RQOVEX")
+%Dealer.Response{data: %Dealer.Stocks{ok: true,
+  symbols: [%{"name" => "DIUW Ltd.", "symbol" => "DIUW"}]},
+ raw_response: %HTTPoison.Response{body: "{\n  \"ok\": true,\n  \"symbols\": [\n    {\n      \"name\": \"DIUW Ltd.\",\n      \"symbol\": \"DIUW\"\n    }\n  ]\n}",
+  headers: [{"Server", "nginx/1.8.0"},
+   {"Date", "Tue, 15 Dec 2015 10:54:03 GMT"},
+   {"Content-Type", "application/json"}, {"Content-Length", "98"},
+   {"Connection", "keep-alive"},
+   {"Strict-Transport-Security", "max-age=31536000; includeSubdomains"}],
+  status_code: 200}, status_code: 200}
+```
