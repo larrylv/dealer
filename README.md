@@ -83,3 +83,11 @@ Documentation link: https://starfighter.readme.io/docs/get-orderbook-for-stock
 iex> Dealer.Stock.orderbook("RQOVEX", "DIUW")
 ```
 
+### A New Order For A Stock
+
+Documentation link: https://starfighter.readme.io/docs/place-new-order
+
+``` elixir
+iex> Dealer.Orders.create("QWYIEX", "YPII", %{account: "TOB1728377", price: 33, qty: 100, direction: "buy", orderType: "limit"})
+```
+
