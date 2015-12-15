@@ -48,12 +48,28 @@ Or something bad might happen during the reuqest, the response will be: `{:error
 Documentation link: https://starfighter.readme.io/docs/heartbeat
 
 ``` elixir
-iex(2)> Dealer.Heartbeat.get
+iex> Dealer.Heartbeat.get
 %Dealer.Response{data: %Dealer.Heartbeat{error: "", ok: true},
  raw_response: %HTTPoison.Response{body: "{\"ok\":true,\"error\":\"\"}",
   headers: [{"Server", "nginx/1.8.0"},
    {"Date", "Mon, 14 Dec 2015 17:25:10 GMT"},
    {"Content-Type", "application/json"}, {"Content-Length", "22"},
+   {"Connection", "keep-alive"},
+   {"Strict-Transport-Security", "max-age=31536000; includeSubdomains"}],
+  status_code: 200}, status_code: 200}
+```
+
+### Check The Venue Is Up
+
+Documentation link: https://starfighter.readme.io/docs/venue-healthcheck
+
+``` elixir
+iex> Dealer.Venue.heartbeat("RQOVEX")
+%Dealer.Response{data: %Dealer.Venue{error: "", ok: true, venue: "RQOVEX"},
+ raw_response: %HTTPoison.Response{body: "{\n  \"ok\": true,\n  \"venue\": \"RQOVEX\"\n}",
+  headers: [{"Server", "nginx/1.8.0"},
+   {"Date", "Tue, 15 Dec 2015 10:27:19 GMT"},
+   {"Content-Type", "application/json"}, {"Content-Length", "37"},
    {"Connection", "keep-alive"},
    {"Strict-Transport-Security", "max-age=31536000; includeSubdomains"}],
   status_code: 200}, status_code: 200}
