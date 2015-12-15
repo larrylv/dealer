@@ -7,8 +7,8 @@ defmodule Dealer.Stock.Orderbook do
     ok: boolean,
     venue: String.t,
     symbol: String.t,
-    bids: Dealer.Stock.bids,
-    asks: Dealer.Stock.asks,
+    bids: Dealer.Orderbook.bids,
+    asks: Dealer.Orderbook.asks,
     ts: String.t
   }
 
