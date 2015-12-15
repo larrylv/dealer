@@ -113,4 +113,22 @@ Documentation link: https://starfighter.readme.io/docs/cancel-an-order
 
 ``` elixir
 iex> Dealer.Order.cancel("LBPTEX", "GVOE", 306)
+
 ```
+
+### Status For All Orders
+
+Documentation link: https://starfighter.readme.io/docs/status-for-all-orders
+
+``` elixir
+iex> Dealer.Orders.status("LBPTEX", "ACCOUNT_NAME")
+```
+
+### Status For All Orders In A Stock
+
+Documentation link: https://starfighter.readme.io/docs/status-for-all-orders-in-a-stock
+
+``` elixir
+iex> Dealer.Orders.status("LBPTEX", "ACCOUNT_NAME", "GVOE")
+```
+
