@@ -65,14 +65,6 @@ Documentation link: https://starfighter.readme.io/docs/venue-healthcheck
 
 ``` elixir
 iex> Dealer.Venue.heartbeat("RQOVEX")
-%Dealer.Response{data: %Dealer.Venue{error: "", ok: true, venue: "RQOVEX"},
- raw_response: %HTTPoison.Response{body: "{\n  \"ok\": true,\n  \"venue\": \"RQOVEX\"\n}",
-  headers: [{"Server", "nginx/1.8.0"},
-   {"Date", "Tue, 15 Dec 2015 10:27:19 GMT"},
-   {"Content-Type", "application/json"}, {"Content-Length", "37"},
-   {"Connection", "keep-alive"},
-   {"Strict-Transport-Security", "max-age=31536000; includeSubdomains"}],
-  status_code: 200}, status_code: 200}
 ```
 
 ### Stocks on a Venue
@@ -81,15 +73,6 @@ Documentation link: https://starfighter.readme.io/docs/list-stocks-on-venue
 
 ``` elixir
 iex> Dealer.Stocks.on_venue("RQOVEX")
-%Dealer.Response{data: %Dealer.Stocks{ok: true,
-  symbols: [%{"name" => "DIUW Ltd.", "symbol" => "DIUW"}]},
- raw_response: %HTTPoison.Response{body: "{\n  \"ok\": true,\n  \"symbols\": [\n    {\n      \"name\": \"DIUW Ltd.\",\n      \"symbol\": \"DIUW\"\n    }\n  ]\n}",
-  headers: [{"Server", "nginx/1.8.0"},
-   {"Date", "Tue, 15 Dec 2015 10:54:03 GMT"},
-   {"Content-Type", "application/json"}, {"Content-Length", "98"},
-   {"Connection", "keep-alive"},
-   {"Strict-Transport-Security", "max-age=31536000; includeSubdomains"}],
-  status_code: 200}, status_code: 200}
 ```
 
 ### The Orderbook For A Stock
@@ -98,16 +81,5 @@ Documentation link: https://starfighter.readme.io/docs/get-orderbook-for-stock
 
 ``` elixir
 iex> Dealer.Stock.orderbook("RQOVEX", "DIUW")
-%Dealer.Response{data: %Dealer.Stock{asks: [%{"isBuy" => false, "price" => 6127,
-     "qty" => 11570}, %{"isBuy" => false, "price" => 6157, "qty" => 11570},
-   %{"isBuy" => false, "price" => 6187, "qty" => 11570}], bids: nil, ok: true,
-  symbol: "DIUW", ts: "2015-12-15T11:04:20.310105107Z", venue: "RQOVEX"},
- raw_response: %HTTPoison.Response{body: "{\n  \"ok\": true,\n  \"venue\": \"RQOVEX\",\n  \"symbol\": \"DIUW\",\n  \"ts\": \"2015-12-15T11:04:20.310105107Z\",\n  \"bids\": null,\n  \"asks\": [\n    {\n      \"price\": 6127,\n      \"qty\": 11570,\n      \"isBuy\": false\n    },\n    {\n      \"price\": 6157,\n      \"qty\": 11570,\n      \"isBuy\": false\n    },\n    {\n      \"price\": 6187,\n      \"qty\": 11570,\n      \"isBuy\": false\n    }\n  ]\n}",
-  headers: [{"Server", "nginx/1.8.0"},
-   {"Date", "Tue, 15 Dec 2015 11:04:23 GMT"},
-   {"Content-Type", "application/json"}, {"Content-Length", "356"},
-   {"Connection", "keep-alive"},
-   {"Strict-Transport-Security", "max-age=31536000; includeSubdomains"}],
-  status_code: 200}, status_code: 200}
 ```
 
