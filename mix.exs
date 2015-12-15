@@ -3,7 +3,7 @@ defmodule Dealer.Mixfile do
 
   def project do
     [app: :dealer,
-     version: "0.1.0",
+     version: "0.1.1",
      description: "An API Client for Stockfighter.",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
