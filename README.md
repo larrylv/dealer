@@ -91,3 +91,10 @@ Documentation link: https://starfighter.readme.io/docs/place-new-order
 iex> Dealer.Orders.create("QWYIEX", "YPII", %{account: "TOB1728377", price: 33, qty: 100, direction: "buy", orderType: "limit"})
 ```
 
+### A Quote For A Stock
+
+Documentation link: https://starfighter.readme.io/docs/a-quote-for-a-stock
+
+``` elixir
+iex> Dealer.Stock.quote("LBPTEX", "GVOE")
+```
