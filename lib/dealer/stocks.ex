@@ -3,8 +3,7 @@ defmodule Dealer.Stocks do
   Stocks related API.
   """
 
-  @stock_list_endpoint "/ob/api/venues/:venue/stocks"
-  @stock_show_endpoint "/ob/api/venues/:venue/stocks/:stock"
+  @endpoint "/ob/api/venues/:venue/stocks"
 
   @type t :: %__MODULE__ {
     ok: boolean,
@@ -23,7 +22,7 @@ defmodule Dealer.Stocks do
   @spec on_venue(String.t) :: Dealer.Response | {:error, term}
   @doc "List the stocks available for trading on a venue"
   def on_venue(venue) do
-    build_path(@stock_list_endpoint, %{venue: venue})
+    build_path(@endpoint, %{venue: venue})
     |> Dealer.get
     |> Dealer.Response.new(%{as: __MODULE__})
   end
