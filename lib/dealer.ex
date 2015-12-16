@@ -44,7 +44,7 @@ defmodule Dealer do
 
   defp replace_param_with_value(path, key, value) do
     param_regex = ~r/(\/|\a)(\:#{key})(\/|\Z)/
-    Regex.replace param_regex, path, fn full_match, start, param_name, finish ->
+    Regex.replace param_regex, path, fn _, start, _, finish ->
       "#{start}#{value}#{finish}"
     end
   end
