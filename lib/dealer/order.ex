@@ -53,7 +53,7 @@ defmodule Dealer.Order do
   @doc "Cancel An Order."
   def cancel(venue, stock, id) do
     build_path(@endpoint, %{venue: venue, stock: stock, id: id})
-    |> Dealer.get
+    |> Dealer.delete
     |> Dealer.Response.new(%{as: __MODULE__})
   end
 
