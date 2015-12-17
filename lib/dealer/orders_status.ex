@@ -6,10 +6,10 @@ defmodule Dealer.OrdersStatus do
   @type t :: %__MODULE__ {
     ok: boolean,
     venue: String.t,
-    orders: Dealer.OrdersStatus.dealers
+    orders: Dealer.OrdersStatus.orders
   }
 
-  @type dealers :: [Dealer.Order]
+  @type orders :: [Dealer.Order]
 
   defstruct ok: false,
             venue: "",
