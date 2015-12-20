@@ -50,6 +50,8 @@ defmodule Dealer.Response do
   end
 
   defp parse_body(response, options) do
+    options = Map.put(options, :keys, :atoms)
+
     case Poison.decode(response.body, options) do
       {:ok, data} ->
         {:ok, data}
