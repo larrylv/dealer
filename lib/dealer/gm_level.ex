@@ -1,6 +1,6 @@
-defmodule Dealer.GM do
+defmodule Dealer.GmLevel do
   @moduledoc """
-  APIs to dealt with GM.
+  APIs to dealt with gm level.
   """
 
   @start_endpoint "/gm/levels/:level"
