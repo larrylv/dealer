@@ -12,7 +12,7 @@ An api library for [Stockfighter](https://www.stockfighter.io/) in Elixir, provi
   1. Add dealer to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:dealer, "~> 0.3.0"}]
+          [{:dealer, "~> 0.3.1"}]
         end
 
   2. Ensure dealer is started before your application:
@@ -135,5 +135,5 @@ iex> Dealer.GmLevel.start("dueling_bulldozers")
 ### Get an instance state
 
 ``` elixir
-iex> Dealer.GmInstance.get("9024")
+iex> Dealer.GmInstance.get(9024)
 ```
