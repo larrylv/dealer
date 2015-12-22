@@ -129,11 +129,24 @@ iex> Dealer.Orders.status("LBPTEX", "ACCOUNT_NAME", "GVOE")
 ### Start a level
 
 ``` elixir
-iex> Dealer.GmLevel.start("dueling_bulldozers")
+iex> Dealer.GM.start_level("dueling_bulldozers")
 ```
 
 ### Get an instance state
 
 ``` elixir
-iex> Dealer.GmInstance.get(9024)
+iex> Dealer.GM.get_instance(5360)
 ```
+
+### Stop an instance
+
+``` elixir
+iex> Dealer.GM.stop_instance(5360)
+```
+
+### Restart an instance
+
+``` elixir
+iex> Dealer.GM.restart_instance(5360)
+```
+

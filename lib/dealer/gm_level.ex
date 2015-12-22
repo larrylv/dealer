@@ -1,6 +1,6 @@
 defmodule Dealer.GmLevel do
   @moduledoc """
-  APIs to dealt with gm level.
+  Gm level struct.
   """
 
   @start_endpoint "/gm/levels/:level"
@@ -18,15 +18,5 @@ defmodule Dealer.GmLevel do
             account: "",
             tickers: [],
             venues: []
-
-  import Dealer, only: [build_path: 2]
-
-  @spec start(String.t) :: Dealer.Response | {:error, term}
-  @doc "Start a gm level."
-  def start(level) do
-    build_path(@start_endpoint, %{level: level})
-    |> Dealer.post("")
-    |> Dealer.Response.new(%{as: __MODULE__})
-  end
 end
 
