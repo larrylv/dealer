@@ -29,7 +29,7 @@ defmodule Dealer.Response do
   It returns `Dealer.Response` struct in case of success,
   otherwise `{:error, term}`.
   """
-  @spec new(map, map) :: __MODULE__ | {:error, term}
+  @spec new(tuple, map) :: __MODULE__ | {:error, term}
   def new({:ok, response}, options) do
     case parse_body(response, options) do
       {:ok, data} ->
@@ -39,12 +39,11 @@ defmodule Dealer.Response do
           status_code: response.status_code
         }
       {:error, error} ->
-        IO.inspect response
         {:error, error}
     end
   end
 
-  @spec new(map, map) :: {:error, term}
+  @spec new(tuple, map) :: {:error, term}
   def new({:error, %HTTPoison.Error{reason: reason}}, _options) do
     {:error, reason}
   end

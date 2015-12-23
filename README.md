@@ -41,6 +41,8 @@ If the api request is successful, the response will be a `Dealer.Response` struc
 
 Or something bad might happen during the reuqest, the response will be: `{:error, term}`.
 
+Websocket response will be either a `Dealer.Websocket.Response` struct or `{:error, term}`.
+
 ## API Documentation
 
 ### Check The Api Is Up
@@ -122,6 +124,38 @@ Documentation link: https://starfighter.readme.io/docs/status-for-all-orders-in-
 
 ``` elixir
 iex> Dealer.Orders.status("LBPTEX", "ACCOUNT_NAME", "GVOE")
+```
+
+## Websocket Documentation
+
+### Quotes (Ticket Tape)
+
+Documentation link: https://starfighter.readme.io/docs/quotes-ticker-tape-websocket
+
+``` elixir
+iex> {account, venue, stock} = {"MSB5372858", "TYAMEX", "PTC"}
+iex> socket = Dealer.Websocket.Quotes.connect(account, venue)
+iex> Dealer.Websocket.Quotes.recv!(socket)
+iex> Dealer.Websocket.Quotes.close(socket)
+
+iex> socket = Dealer.Websocket.Quotes.connect(account, venue, stock)
+iex> Dealer.Websocket.Quotes.recv!(socket)
+iex> Dealer.Websocket.Quotes.close(socket)
+```
+
+### Executions (Fills)
+
+Documentation link: https://starfighter.readme.io/docs/executions-fills-websocket
+
+``` elixir
+iex> {account, venue, stock} = {"MSB5372858", "TYAMEX", "PTC"}
+iex> socket = Dealer.Websocket.Executions.connect(account, venue)
+iex> Dealer.Websocket.Executions.recv!(socket)
+iex> Dealer.Websocket.Executions.close(socket)
+
+iex> socket = Dealer.Websocket.Executions.connect(account, venue, stock)
+iex> Dealer.Websocket.Executions.recv!(socket)
+iex> Dealer.Websocket.Executions.close(socket)
 ```
 
 ## GM Documentation

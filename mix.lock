@@ -7,4 +7,5 @@
   "inch_ex": {:hex, :inch_ex, "0.4.0"},
   "mimerl": {:hex, :mimerl, "1.0.2"},
   "poison": {:hex, :poison, "1.5.0"},
+  "socket": {:hex, :socket, "0.3.1"},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"}}

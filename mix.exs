@@ -13,13 +13,14 @@ defmodule Dealer.Mixfile do
   end
 
   def application do
-    [applications: [:logger, :httpoison]]
+    [applications: [:logger, :httpoison, :socket]]
   end
 
   defp deps do
     [
       {:httpoison, "~> 0.8"},
       {:poison, "~> 1.5"},
+      {:socket, "~> 0.3.1"},
       {:inch_ex, ">= 0.0.0", only: :docs},
       {:earmark, "~> 0.1", only: :docs},
       {:ex_doc, "~> 0.11", only: :docs}
