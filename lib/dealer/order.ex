@@ -19,7 +19,8 @@ defmodule Dealer.Order do
     ts: String.t,
     fills: Dealer.Order.fills,
     totalFilled: integer,
-    open: boolean
+    open: boolean,
+    error: String.t
   }
 
   @type fills :: [%{ price: integer, qty: integer, ts: String.t }]
@@ -37,7 +38,8 @@ defmodule Dealer.Order do
             ts: "",
             fills: [],
             totalFilled: 0,
-            open: false
+            open: false,
+            error: ""
 
   import Dealer, only: [build_path: 2]
 
