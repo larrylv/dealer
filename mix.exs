@@ -3,7 +3,7 @@ defmodule Dealer.Mixfile do
 
   def project do
     [app: :dealer,
-     version: "0.6.0",
+     version: "0.6.1",
      description: "An API Client for Stockfighter.",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
@@ -20,7 +20,7 @@ defmodule Dealer.Mixfile do
     [
       {:httpoison, "~> 0.8"},
       {:poison, "~> 1.5"},
-      {:socket, git: "https://github.com/larrylv/elixir-socket"},
+      {:socket, git: "https://github.com/larrylv/elixir-socket.git"},
       {:inch_ex, ">= 0.0.0", only: :docs},
       {:earmark, "~> 0.1", only: :docs},
       {:ex_doc, "~> 0.11", only: :docs}
