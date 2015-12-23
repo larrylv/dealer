@@ -12,7 +12,7 @@ An api library for [Stockfighter](https://www.stockfighter.io/) in Elixir, provi
   1. Add dealer to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:dealer, "~> 0.6.1"}]
+          [{:dealer, "~> 0.7.0"}]
         end
 
   2. Ensure dealer is started before your application:
