@@ -12,15 +12,15 @@ defmodule Dealer.Websocket.Executions do
 
   @doc "Executions (Fills) Websocket"
 
-  @spec connect(String.t, String.t) :: Socket.Web.t
-  def connect(trading_account, venue) do
+  @spec connect!(String.t, String.t) :: Socket.Web.t
+  def connect!(trading_account, venue) do
     path = build_path(@executions_path, %{trading_account: trading_account, venue: venue})
 
     Socket.Web.connect!(@domain, path: path, secure: true)
   end
 
-  @spec connect(String.t, String.t, String.t) :: Socket.Web.t
-  def connect(trading_account, venue, stock) do
+  @spec connect!(String.t, String.t, String.t) :: Socket.Web.t
+  def connect!(trading_account, venue, stock) do
     path = build_path(@executions_stock_path, %{trading_account: trading_account, venue: venue, stock: stock})
 
     Socket.Web.connect!(@domain, path: path, secure: true)

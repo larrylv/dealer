@@ -10,8 +10,12 @@ defmodule Dealer.Websocket do
   @doc "Receive message from websocket"
   @spec recv!(Socket.Web.t) :: Dealer.Websocket.Response
   def recv!(socket) do
-    socket
-    |> Socket.Web.recv!
-    |> Dealer.Websocket.Response.new
+    case Socket.Web.recv!(socket) do
+      {:ping, _} = packet->
+        IO.inspect packet
+        Socket.Web.send(socket, {:pong, "pong"}, [])
+      {:text, _} = response ->
+        Dealer.Websocket.Response.new(response)
+    end
   end
 end

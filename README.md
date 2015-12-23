@@ -134,11 +134,11 @@ Documentation link: https://starfighter.readme.io/docs/quotes-ticker-tape-websoc
 
 ``` elixir
 iex> {account, venue, stock} = {"MSB5372858", "TYAMEX", "PTC"}
-iex> socket = Dealer.Websocket.Quotes.connect(account, venue)
+iex> socket = Dealer.Websocket.Quotes.connect!(account, venue)
 iex> Dealer.Websocket.Quotes.recv!(socket)
 iex> Dealer.Websocket.Quotes.close(socket)
 
-iex> socket = Dealer.Websocket.Quotes.connect(account, venue, stock)
+iex> socket = Dealer.Websocket.Quotes.connect!(account, venue, stock)
 iex> Dealer.Websocket.Quotes.recv!(socket)
 iex> Dealer.Websocket.Quotes.close(socket)
 ```
@@ -149,11 +149,11 @@ Documentation link: https://starfighter.readme.io/docs/executions-fills-websocke
 
 ``` elixir
 iex> {account, venue, stock} = {"MSB5372858", "TYAMEX", "PTC"}
-iex> socket = Dealer.Websocket.Executions.connect(account, venue)
+iex> socket = Dealer.Websocket.Executions.connect!(account, venue)
 iex> Dealer.Websocket.Executions.recv!(socket)
 iex> Dealer.Websocket.Executions.close(socket)
 
-iex> socket = Dealer.Websocket.Executions.connect(account, venue, stock)
+iex> socket = Dealer.Websocket.Executions.connect!(account, venue, stock)
 iex> Dealer.Websocket.Executions.recv!(socket)
 iex> Dealer.Websocket.Executions.close(socket)
 ```
