@@ -20,7 +20,7 @@ defmodule Dealer.Mixfile do
     [
       {:httpoison, "~> 0.8"},
       {:poison, "~> 1.5"},
-      {:socket, "~> 0.3.1"},
+      {:socket, git: "https://github.com/larrylv/elixir-socket"},
       {:inch_ex, ">= 0.0.0", only: :docs},
       {:earmark, "~> 0.1", only: :docs},
       {:ex_doc, "~> 0.11", only: :docs}
