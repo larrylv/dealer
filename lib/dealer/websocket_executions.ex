@@ -3,7 +3,7 @@ defmodule Dealer.Websocket.Executions do
   Dealing with executions websocket.
   """
 
-  @domain "www.stockfighter.io"
+  @domain "api.stockfighter.io"
 
   @executions_path "/ob/api/ws/:trading_account/venues/:venue/executions"
   @executions_stock_path "/ob/api/ws/:trading_account/venues/:venue/executions/stocks/:stock"

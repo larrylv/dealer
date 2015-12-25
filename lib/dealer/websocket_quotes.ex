@@ -3,7 +3,7 @@ defmodule Dealer.Websocket.Quotes do
   Dealing with quotes websocket.
   """
 
-  @domain "www.stockfighter.io"
+  @domain "api.stockfighter.io"
 
   @tickertape_path "/ob/api/ws/:trading_account/venues/:venue/tickertape"
   @tickertape_stock_path "/ob/api/ws/:trading_account/venues/:venue/tickertape/stocks/:stock"
