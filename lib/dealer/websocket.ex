@@ -11,10 +11,13 @@ defmodule Dealer.Websocket do
   @spec recv!(Socket.Web.t) :: Dealer.Websocket.Response
   def recv!(socket) do
     case Socket.Web.recv!(socket) do
-      {:ping, _} ->
+      {:ping, packet} ->
+        Socket.Web.pong!(socket, packet)
         recv!(socket)
-      {:text, _} = response ->
-        Dealer.Websocket.Response.new(response)
+      {:text, _} = packet ->
+        Dealer.Websocket.Response.new(packet)
+      packet ->
+        raise "Unknown packet: #{inspect(packet)}"
     end
   end
 end
