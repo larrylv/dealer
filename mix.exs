@@ -18,7 +18,7 @@ defmodule Dealer.Mixfile do
 
   defp deps do
     [
-      {:socket, github: "larrylv/elixir-socket"},
+      {:socket, github: "larrylv/elixir-socket", branch: "master"},
       {:httpoison, "~> 0.8"},
       {:poison, "~> 1.5"},
       {:inch_ex, ">= 0.0.0", only: :docs},

@@ -7,5 +7,5 @@
   "inch_ex": {:hex, :inch_ex, "0.4.0"},
   "mimerl": {:hex, :mimerl, "1.0.2"},
   "poison": {:hex, :poison, "1.5.0"},
-  "socket": {:git, "https://github.com/larrylv/elixir-socket.git", "ee10e9e00cc701cbecc3672ddcfd0c34f25a1dc5", []},
+  "socket": {:git, "https://github.com/larrylv/elixir-socket.git", "b3a7c2be59ffd298fb59d85d1e6b3696bb4940e2", [branch: "master"]},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"}}
